@@ -1,6 +1,6 @@
 # MakeMeLaugh - Corrosion Explosion
 
-<img width="800" alt="makemelaugh-corrosion-main" src="https://github.com/111lomaz111/Corrosion-Explosion/tree/main/Assets/Sprites/githubImages/image0.png">
+<img width="800" alt="makemelaugh-corrosion-main" src="https://raw.github.com/111lomaz111/Corrosion-Explosion/tree/main/Assets/Sprites/githubImages/image0.png">
 "Corrosion Explosion" is an endless platformer(?) shooter where you try to survive for as many rounds as possible in the mouth of a foul goblin, a place swarming with dental decay bacteria. You play the role of the Little Tooth Paste, Pastek, who, with his handy weapons - a tooth paste and a tooth brush - tries to clean the place and kill all of the invaders. But look out - if too many teeth get corroded, the goblin will laugh at you and crush you under his fangs. Say cheese!
 
 ### Local setup
