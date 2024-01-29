@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4d6d6e7b-cacb-4b3a-857b-281326ad051b}">
+		<property name="assetPath">
+			<value>destroyed.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.6145624999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a0822710-cead-4033-93a8-0ecaacb0b3a8}</destination>
+		</relationship>
+	</object>
+</objects>

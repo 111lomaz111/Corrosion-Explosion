@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7307d2b3-2b95-4855-898a-8b781d155cac}">
+		<property name="assetPath">
+			<value>next round-005.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.2289374999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a0822710-cead-4033-93a8-0ecaacb0b3a8}</destination>
+		</relationship>
+	</object>
+</objects>
