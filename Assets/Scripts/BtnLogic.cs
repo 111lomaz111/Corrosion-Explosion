@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class BtnLogic : MonoBehaviour
 {
-    [SerializeField] public Sprite buttonSprite;
-    [SerializeField] public Sprite highlightSprite;
-    [SerializeField] public Sprite sprite;
-    [SerializeField] public Image buttonImage;
+    public Sprite buttonSprite;
+    public Sprite highlightSprite;
+    public Sprite sprite;
+    public Image buttonImage;
 
     public void clicked()
     {

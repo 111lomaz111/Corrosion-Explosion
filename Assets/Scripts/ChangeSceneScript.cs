@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ChangeSceneScript : MonoBehaviour
 {
-    [SerializeField] public GameObject transitionPanel;
+    public GameObject transitionPanel;
 
     public void ChangeScene()
     {

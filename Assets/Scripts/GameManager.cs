@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public int maxCorruption = 10;
     public int currentCoruption = 0;
 
-    [SerializeField] public float respawnTime = 3f;
+    public float respawnTime = 3f;
 
     public int currentRound = 0;
     public int maxMonsters = 4;
@@ -24,17 +24,17 @@ public class GameManager : MonoBehaviour
 
     public bool Ending = false;
 
-    [SerializeField] public GameObject textParent;
-    [SerializeField] public GameObject endFaceAnim;
-    [SerializeField] public GameObject roundParent;
-    [SerializeField] public GameObject TimerText;
-    [SerializeField] public GameObject CorruptionBarObject;
-    [SerializeField] public GameObject TutorialPanel;
+    public GameObject textParent;
+    public GameObject endFaceAnim;
+    public GameObject roundParent;
+    public GameObject TimerText;
+    public GameObject CorruptionBarObject;
+    public GameObject TutorialPanel;
 
     public Image CurrentFaceSprite;
     [SerializeField] private Sprite[] faceSprites = null;
 
-    [SerializeField] public EventReference[] roundAudioReferences;
+    public EventReference[] roundAudioReferences;
     public int audioIndex = 0;
 
     private void Awake()

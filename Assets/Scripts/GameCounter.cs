@@ -7,7 +7,7 @@ public class GameCounter : MonoBehaviour
 {
     public static GameCounter Instance;
 
-    [SerializeField] public float timer;
+    public float timer;
     [SerializeField] private TextMeshProUGUI textObject;
     [SerializeField] private TextMeshProUGUI roundText;
 

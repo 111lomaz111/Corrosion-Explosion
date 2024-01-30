@@ -6,7 +6,7 @@ public class Teeth : MonoBehaviour
 {
     [SerializeField] private Sprite[] _teethSprites;
     [SerializeField] private bool _notOccupied = true;
-    [SerializeField] public GameObject OccupiedUnit;
+    public GameObject OccupiedUnit;
 
     public bool topTeeth;
 

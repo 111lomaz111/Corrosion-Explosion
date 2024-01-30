@@ -9,7 +9,7 @@ public class BackgroundMusic : MonoBehaviour
     public static FMOD.Studio.EventInstance Music;
     public static FMOD.Studio.EventInstance EndGame;
 
-    [SerializeField] public EventReference music;
+    public EventReference music;
 
     private void Awake()
     {

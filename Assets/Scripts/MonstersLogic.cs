@@ -9,7 +9,7 @@ public class MonstersLogic : MonoBehaviour
     public static MonstersLogic Instance;
 
     [SerializeField] private GameObject _teethParent;
-    [SerializeField] public int MonstersCounter = 0;
+    public int MonstersCounter = 0;
 
     [SerializeField] private GameObject monsterPrefab;
 

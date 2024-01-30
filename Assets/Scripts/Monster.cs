@@ -9,7 +9,7 @@ public class Monster : MonoBehaviour
     private float _timeRemaining;
     private bool _isRunning = false;
 
-    [SerializeField] public Animation deathAnim;
+    public Animation deathAnim;
 
     public void Start()
     {
