@@ -9,9 +9,9 @@ public class ToothBrush : Weapon
     public Animator PlayerAnimator;
 
     private SpriteRenderer toothBrushSpriteRenderer;
-    private bool isCleaning;
+    [SerializeField] private bool isCleaning;
     [SerializeField]
-    private List<Teeth> currentlyTouchingTeeths;
+    private List<Teeth> currentlyTouchingTeeth;
     private readonly float cleaningTimeSeconds = 1;
     private readonly int checkInCleanTimeCount = 20;
 
@@ -30,12 +30,12 @@ public class ToothBrush : Weapon
     {
         if (!isCleaning)
         {
-            if (currentlyTouchingTeeths.Any(x => x._state != TeethState.HEALTHY))
+            if (currentlyTouchingTeeth.Any(x => x._state != TeethState.HEALTHY))
             {
                 isCleaning = true;
                 PlayerAnimator.SetBool("IsCleaning", isCleaning);
 				AudioManager.Instance.PlayOneShot(AudioManager.Instance.cleaningSound, transform.position);
-                foreach (Teeth t in currentlyTouchingTeeths) //fixme leczy zdrowe zeby
+                foreach (Teeth t in currentlyTouchingTeeth)
                 {
                     StartCoroutine(CheckIfElementIsStill(cleaningTimeSeconds, t));
                 }
@@ -50,7 +50,7 @@ public class ToothBrush : Weapon
     private void OnDisable()
     {
         FireStop();
-        currentlyTouchingTeeths.Clear();
+        currentlyTouchingTeeth.Clear();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,7 +59,13 @@ public class ToothBrush : Weapon
         if (go.tag == TagsConstants.TeethTag)
         {
             Teeth t = go.GetComponent<Teeth>();
-            currentlyTouchingTeeths.Add(t);
+            
+            currentlyTouchingTeeth.Add(t);
+        }
+
+        if (isCleaning) //pseudo click
+        {
+            Fire();
         }
     }
 
@@ -69,7 +75,13 @@ public class ToothBrush : Weapon
         if (go.tag == TagsConstants.TeethTag)
         {
             Teeth t = go.GetComponent<Teeth>();
-            currentlyTouchingTeeths.Remove(t);
+            currentlyTouchingTeeth.Remove(t);
+        }
+
+
+        if (currentlyTouchingTeeth.Count == 0 && isCleaning)
+        {
+            FireStop();
         }
     }
 
@@ -78,9 +90,9 @@ public class ToothBrush : Weapon
         float checkWaitSeconds = cleaningTimeSeconds / checkInCleanTimeCount;
 
         yield return new WaitForSecondsRealtime(checkWaitSeconds);
-        bool isElementOnList = currentlyTouchingTeeths.Contains(t);
+        bool isElementOnList = currentlyTouchingTeeth.Contains(t);
 
-        if (checkForSeconds > 0 && isElementOnList && isCleaning)
+        if (checkForSeconds > 0 && isElementOnList)
         {
             StartCoroutine(CheckIfElementIsStill(checkForSeconds - checkWaitSeconds, t));
         }
@@ -91,7 +103,11 @@ public class ToothBrush : Weapon
                 t.HealTeeth();
                 GameManager.Instance.decrementCorruption();
             }
-            FireStop();
+
+            if (currentlyTouchingTeeth.Count(x => x._state != TeethState.HEALTHY) == 0 && isCleaning)
+            {
+                FireStop();
+            }
         }
     }
 
